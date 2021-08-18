@@ -1,0 +1,7 @@
+<section class='user-show-page'>
+  <h1><%= current_user.email %></h1>
+
+  <%= turbo_frame_tag 'new_board' do %>
+    <%= link_to 'create new board', new_board_path %>
+  <% end %>
+</section>

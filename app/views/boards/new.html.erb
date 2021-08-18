@@ -1,0 +1,10 @@
+<section class='board-new'>
+
+  <%= turbo_frame_tag 'new_board' do %>
+    <%= render 'form', board: @board %>
+    <%= link_to 'cancel', user_path(current_user) %>
+  <% end %>
+
+</section>
+
+ <%# render the partial form _form.html.erb inside boards folder %>
