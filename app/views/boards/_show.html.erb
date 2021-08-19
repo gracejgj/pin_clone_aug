@@ -1,0 +1,5 @@
+<%= turbo_frame_tag dom_id(@board) do %>
+  <%= @board.name %>
+  <%= link_to 'Edit', edit_board_path(@board) %>
+  <%= button_to 'Delete', board_path(@board), method: :delete, data: { confirm: 'Are you sure?', turbo: 'false' }%>
+<% end %>

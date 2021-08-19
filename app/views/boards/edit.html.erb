@@ -1,0 +1,8 @@
+<section class='board-edit-page'>
+  <%= turbo_frame_tag dom_id(@board) do %>
+    <%= render 'form', board: @board %>
+  <% end %>
+</section>
+
+
+ <%# render the partial form _form.html.erb inside boards folder %>

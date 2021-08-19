@@ -1,8 +1,12 @@
-<%# turbo_frame_tag dom_id(@board) do %>
-  <%= form_with(model: board) do |f| %>
-    <%# render 'shared/error_message', object: board %>
+<%= turbo_frame_tag dom_id(@board) do %>
+  <%= form_with(model: board, data: {controller: 'reset', action: 'turbo:submit-end->reset#clearForm'}) do |f| %>
+    <%= render 'shared/error_message', object: board %>
     <%= f.label :name %>
     <%= f.text_field :name %>
     <%= f.submit 'Save' %>
-  <%# end %>
+  <% end %>
 <% end %>
+
+<%# action means listening to event(currently turbo) %>
+<%# can get from turbo documentation 'turbo:submit-end' %>
+<%# Apply turbo_frame_tag  %>

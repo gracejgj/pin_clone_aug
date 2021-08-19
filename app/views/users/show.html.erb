@@ -1,7 +1,15 @@
 <section class='user-show-page'>
   <h1><%= current_user.email %></h1>
 
-  <%= turbo_frame_tag 'new_board' do %>
-    <%= link_to 'create new board', new_board_path %>
-  <% end %>
+  <%= turbo_frame_tag 'new_board', src: new_board_path %>
+
+  <div class='list-of-boards'>
+    <%= turbo_frame_tag 'board_list' do %>
+      <%= render partial: "boards/board", collection: @boards %>
+    <% end %>
+  </div>
 </section>
+
+<%# create @boards at user_controller
+@boards to collect all the Boards
+%>
